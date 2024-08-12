@@ -33,9 +33,9 @@ https://user-images.githubusercontent.com/19204463/135974190-cf6180fc-56b2-4c52-
 # Detail
 ## Bugs
 For designs and screenshots check out the ***Bugs*** group in the project. 
-- [ ] Bug 1: On the about screen, the question's label gets cut off and the answer options display an ellipsis instead of wrapping.
-- [ ] Bug 2: The separator lines are missing on the question cards.
-- [ ] Bug 3: When changing the answer to a question the prepopulated answer does not get deselected.
+- [x] Bug 1: On the about screen, the question's label gets cut off and the answer options display an ellipsis instead of wrapping.
+- [x] Bug 2: The separator lines are missing on the question cards.
+- [x] Bug 3: When changing the answer to a question the prepopulated answer does not get deselected.
 
 ## Profile View
 For designs and screenshots check out the ***Profile View*** group in the project.
