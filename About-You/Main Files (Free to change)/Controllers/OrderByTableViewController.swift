@@ -1,7 +1,9 @@
 import UIKit
 
 class OrderByTableViewController: UITableViewController {
-
+    var delegate: OrderByDelegate?
+    var orderOptions: [OrderOption] = [.years, .coffees, .bugs]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
@@ -12,23 +14,24 @@ class OrderByTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return orderOptions.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: UITableViewCell.self))
-        if indexPath.row == 0 {
-            cell?.textLabel?.text = "Years"
-        } else if indexPath.row == 1 {
-            cell?.textLabel?.text = "Coffees"
-        } else {
-            cell?.textLabel?.text = "Bugs"
+        guard let cell, indexPath.row < orderOptions.count else {
+            return cell ?? UITableViewCell()
         }
-        return cell ?? UITableViewCell()
+        cell.textLabel?.text = orderOptions[indexPath.row].rawValue
+        return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        guard let delegate, indexPath.row < orderOptions.count else {
+            return
+        }
+        delegate.didSelectOrder(orderOptions[indexPath.row])
     }
 
 }

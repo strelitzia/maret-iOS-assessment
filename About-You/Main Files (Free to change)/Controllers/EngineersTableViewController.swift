@@ -1,6 +1,6 @@
 import UIKit
 
-class EngineersTableViewController: UITableViewController, UIPopoverPresentationControllerDelegate {
+class EngineersTableViewController: UITableViewController, UIPopoverPresentationControllerDelegate, OrderByDelegate {
     var engineers: [Engineer] = Engineer.testingData()
 
     override func viewDidLoad() {
@@ -29,6 +29,7 @@ class EngineersTableViewController: UITableViewController, UIPopoverPresentation
     @objc func orderByTapped() {
         guard let from = navigationItem.rightBarButtonItem else { return }
         let controller = OrderByTableViewController(style: .plain)
+        controller.delegate = self
         let size = CGSize(width: 200,
                           height: 150)
 
@@ -73,5 +74,10 @@ class EngineersTableViewController: UITableViewController, UIPopoverPresentation
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = QuestionsViewController.loadController(with: engineers[indexPath.row].questions)
         navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func didSelectOrder(_ option: OrderOption) {
+        engineers = engineers.orderBy(by: option)
+        self.tableView.reloadData()
     }
 }
