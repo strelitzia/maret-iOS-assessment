@@ -39,16 +39,16 @@ For designs and screenshots check out the ***Bugs*** group in the project.
 
 ## Profile View
 For designs and screenshots check out the ***Profile View*** group in the project.
-- [ ] Choose which version of the profile view design you would like to attempt.
-- [ ] Create a generic, reusable version of your chosen design.
-- [ ] Display your view at the top of the About screen.
+- [x] Choose which version of the profile view design you would like to attempt.
+- [x] Create a generic, reusable version of your chosen design.
+- [x] Display your view at the top of the About screen.
 - [ ] Tapping on the image in your view should allow a user to select a new image to display from their gallery.
 - [ ] If a user updates their profile image, their image on the list of Engineers screen should also update.
 
 ## Ordering the list of Engineers
 There are no designs for this task.
-- [ ] Order the list of engineers accending based on the number of years, coffees or bugs.
-- [ ] Add tests
+- [x] Order the list of engineers accending based on the number of years, coffees or bugs.
+- [x] Add tests
 
 # Honesty Agreement
 

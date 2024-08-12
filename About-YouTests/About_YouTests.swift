@@ -53,7 +53,8 @@ class About_YouTests: XCTestCase {
                  role: "developer",
                  defaultImageName: "",
                  quickStats: .init(years: years, coffees: coffees, bugs: bugs),
-                 questions: questions)
+                 questions: questions, 
+                 quote: "walking about")
     }
     
 }
