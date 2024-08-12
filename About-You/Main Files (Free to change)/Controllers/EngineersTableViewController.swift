@@ -20,9 +20,9 @@ class EngineersTableViewController: UITableViewController, UIPopoverPresentation
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Order by",
-                                                        style: .plain,
-                                                        target: self,
-                                                        action: #selector(orderByTapped))
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(orderByTapped))
         navigationItem.rightBarButtonItem?.tintColor = .black
     }
 
@@ -33,15 +33,15 @@ class EngineersTableViewController: UITableViewController, UIPopoverPresentation
                           height: 150)
 
         present(popover: controller,
-             from: from,
-             size: size,
-             arrowDirection: .up)
+                from: from,
+                size: size,
+                arrowDirection: .up)
     }
-
+    
     func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
-            return .none
-        }
-
+        return .none
+    }
+    
     private func registerCells() {
         tableView.register(UINib(nibName: String(describing: GlucodianTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: GlucodianTableViewCell.self))
     }
