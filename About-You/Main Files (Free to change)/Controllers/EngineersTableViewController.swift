@@ -1,6 +1,6 @@
 import UIKit
 
-class EngineersTableViewController: UITableViewController, UIPopoverPresentationControllerDelegate, OrderByDelegate {
+class EngineersTableViewController: UITableViewController, UIPopoverPresentationControllerDelegate {
     var engineers: [Engineer] = Engineer.testingData()
 
     override func viewDidLoad() {
@@ -72,10 +72,12 @@ class EngineersTableViewController: UITableViewController, UIPopoverPresentation
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let controller = QuestionsViewController.loadController(with: engineers[indexPath.row].questions)
+        let controller = QuestionsViewController.loadController(with: engineers[indexPath.row].questions, engineer: engineers[indexPath.row])
         navigationController?.pushViewController(controller, animated: true)
     }
-    
+}
+
+extension EngineersTableViewController: OrderByDelegate {
     func didSelectOrder(_ option: OrderOption) {
         engineers = engineers.orderBy(by: option)
         self.tableView.reloadData()

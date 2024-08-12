@@ -4,11 +4,12 @@ class QuestionsViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var containerStack: UIStackView!
     var questions: [Question] = []
-
-    static func loadController(with questions: [Question]) -> QuestionsViewController {
+    var engineer: Engineer?
+    
+    static func loadController(with questions: [Question], engineer: Engineer) -> QuestionsViewController {
         let viewController = QuestionsViewController.init(nibName: String.init(describing: self), bundle: Bundle(for: self))
         viewController.loadViewIfNeeded()
-        viewController.setUp(with: questions)
+        viewController.setUp(with: questions, engineer: engineer)
         return viewController
     }
 
@@ -25,14 +26,25 @@ class QuestionsViewController: UIViewController, UIScrollViewDelegate {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
     }
 
-    func setUp(with questions: [Question]) {
+    func setUp(with questions: [Question], engineer: Engineer) {
         loadViewIfNeeded()
 
+        addProfileView(engineer: engineer)
+        
         for question in questions {
             addQuestion(with: question)
         }
 
         self.questions = questions
+    }
+    
+    private func addProfileView(engineer: Engineer) {
+        guard let profileView = ProfileCardView.loadView() else {
+            return
+        }
+        self.engineer = engineer
+        profileView.setUp(engineer: engineer)
+        containerStack.addArrangedSubview(profileView)
     }
 
     private func addQuestion(with data: Question) {

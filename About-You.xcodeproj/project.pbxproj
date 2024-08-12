@@ -41,6 +41,8 @@
 		5DD01B5627046CD00032C29A /* SelectableAnswerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DD01B5527046CD00032C29A /* SelectableAnswerView.xib */; };
 		5DD01B5827046CDF0032C29A /* QuestionCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DD01B5727046CDF0032C29A /* QuestionCardView.xib */; };
 		5DD01B5E27049AFA0032C29A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD01B5D27049AFA0032C29A /* UIView+Extension.swift */; };
+		7B3449CC2C6AAF3B000C71A0 /* ProfileCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B3449CB2C6AAF3B000C71A0 /* ProfileCardView.xib */; };
+		7B3449CE2C6AB073000C71A0 /* ProfileCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3449CD2C6AB073000C71A0 /* ProfileCardView.swift */; };
 		7BE939282C6A903D008FB125 /* OrderByDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE939272C6A903D008FB125 /* OrderByDelegate.swift */; };
 		7BE9392B2C6A9331008FB125 /* Engineer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE9392A2C6A9331008FB125 /* Engineer+Extension.swift */; };
 /* End PBXBuildFile section */
@@ -103,6 +105,8 @@
 		5DD01B5527046CD00032C29A /* SelectableAnswerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectableAnswerView.xib; sourceTree = "<group>"; };
 		5DD01B5727046CDF0032C29A /* QuestionCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionCardView.xib; sourceTree = "<group>"; };
 		5DD01B5D27049AFA0032C29A /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		7B3449CB2C6AAF3B000C71A0 /* ProfileCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCardView.xib; sourceTree = "<group>"; };
+		7B3449CD2C6AB073000C71A0 /* ProfileCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCardView.swift; sourceTree = "<group>"; };
 		7BE939272C6A903D008FB125 /* OrderByDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderByDelegate.swift; sourceTree = "<group>"; };
 		7BE9392A2C6A9331008FB125 /* Engineer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Engineer+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -333,6 +337,7 @@
 				5D93CE282706F0AD00D5059C /* Cells */,
 				5DD01B5127046C5B0032C29A /* QuestionCardView.swift */,
 				5DD01B5327046C790032C29A /* SelectableAnswerView.swift */,
+				7B3449CD2C6AB073000C71A0 /* ProfileCardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -344,6 +349,7 @@
 				5DD01B4D27046B820032C29A /* QuestionsViewController.xib */,
 				5DD01B5727046CDF0032C29A /* QuestionCardView.xib */,
 				5DD01B5527046CD00032C29A /* SelectableAnswerView.xib */,
+				7B3449CB2C6AAF3B000C71A0 /* ProfileCardView.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -462,6 +468,7 @@
 			files = (
 				5D93CE32270B08C900D5059C /* Standard.png in Resources */,
 				5DD01B5627046CD00032C29A /* SelectableAnswerView.xib in Resources */,
+				7B3449CC2C6AAF3B000C71A0 /* ProfileCardView.xib in Resources */,
 				5DAF4631270C3C820051DEAB /* Bug 4.mov in Resources */,
 				5D8DA23326E011B500418960 /* IntroductionViewController.xib in Resources */,
 				5D93CE40270C157A00D5059C /* Bug 3.png in Resources */,
@@ -517,6 +524,7 @@
 				5D8DA23226E011B500418960 /* IntroductionViewController.swift in Sources */,
 				5D93CE212705F3EA00D5059C /* EngineersTableViewController.swift in Sources */,
 				5D93CE232705F5B000D5059C /* Engineer.swift in Sources */,
+				7B3449CE2C6AB073000C71A0 /* ProfileCardView.swift in Sources */,
 				5DD01B5427046C790032C29A /* SelectableAnswerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
