@@ -51,7 +51,7 @@ class About_YouTests: XCTestCase {
                         questions: [Question] = []) -> Engineer {
         Engineer(name: name,
                  role: "developer",
-                 defualtImageName: "",
+                 defaultImageName: "",
                  quickStats: .init(years: years, coffees: coffees, bugs: bugs),
                  questions: questions)
     }
