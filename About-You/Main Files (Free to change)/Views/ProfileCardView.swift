@@ -11,6 +11,8 @@ class ProfileCardView: UIView {
     @IBOutlet weak var yearsLabel: UILabel!
     @IBOutlet weak var quoteLabel: UILabel!
     
+    @IBOutlet weak var profileView: UIImageView!
+    
     override func awakeFromNib() {
         applyStyling()
     }
