@@ -6,6 +6,7 @@ struct Engineer {
     var defualtImageName: String
     var quickStats: QuickStats
     var questions: [Question]
+    var quote: String
 }
 
 struct QuickStats {
@@ -27,7 +28,8 @@ extension Engineer {
                         MainQuestions.questionThree(answer: Answer(text: "Python", index: 0)),
                         MainQuestions.questionFour(answer: Answer(text: "Every few months", index: 0)),
                         MainQuestions.questionFive(answer: Answer(text: "Watch or read a tutorial", index: 3))
-                     ]),
+                     ], 
+                     quote: "I took the road less traveled."),
 
             Engineer(name: "Wilmar",
                      role: "Head of Engineering",
@@ -39,7 +41,8 @@ extension Engineer {
                         MainQuestions.questionThree(answer: Answer(text: "Python", index: 0)),
                         MainQuestions.questionFour(answer: Answer(text: "Every few months", index: 0)),
                         MainQuestions.questionFive(answer: Answer(text: "Call a coworker or friend", index: 2))
-                     ]),
+                     ],
+                     quote: "I took another road."),
 
             Engineer(name: "Eben",
                      role: "Head of Testing",
@@ -51,7 +54,8 @@ extension Engineer {
                         MainQuestions.questionThree(answer: Answer(text: "Kotlin", index: 1)),
                         MainQuestions.questionFour(answer: Answer(text: "Every few months", index: 0)),
                         MainQuestions.questionFive(answer: Answer(text: "Watch or read a tutorial", index: 3))
-                     ]),
+                     ],
+                     quote: "I did not see that road."),
 
             Engineer(name: "Stefan",
                      role: "Senior dev",
@@ -63,7 +67,8 @@ extension Engineer {
                         MainQuestions.questionThree(answer: Answer(text: "Ruby", index: 3)),
                         MainQuestions.questionFour(answer: Answer(text: "Once a year", index: 1)),
                         MainQuestions.questionFive(answer: Answer(text: "Visit Stack Overflow", index: 0))
-                     ]),
+                     ],
+                     quote: "I took the highway."),
 
             Engineer(name: "Brandon",
                      role: "Senior dev",
@@ -75,7 +80,8 @@ extension Engineer {
                         MainQuestions.questionThree(answer: Answer(text: "C++", index: 5)),
                         MainQuestions.questionFour(answer: Answer(text: "Every few months", index: 0)),
                         MainQuestions.questionFive(answer: Answer(text: "Visit Stack Overflow", index: 0))
-                     ]),
+                     ],
+                     quote: "I could not find the road."),
 
             Engineer(name: "Henri",
                      role: "Senior dev",
@@ -87,7 +93,8 @@ extension Engineer {
                         MainQuestions.questionThree(answer: Answer(text: "Rust", index: 6)),
                         MainQuestions.questionFour(answer: Answer(text: "Every few months", index: 0)),
                         MainQuestions.questionFive(answer: Answer(text: "Go down a google rabbit hole", index: 4))
-                     ])
+                     ],
+                     quote: "I did not see a road, so I bundu-bashed.")
         ]
     }
 }

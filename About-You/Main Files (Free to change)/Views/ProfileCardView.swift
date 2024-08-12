@@ -14,19 +14,20 @@ class ProfileCardView: UIView {
     override func awakeFromNib() {
         applyStyling()
     }
+    
     func setUp(engineer: Engineer) {
         nameLabel.text = engineer.name
         roleLabel.text = engineer.role
         bugsLabel.text = "\(engineer.quickStats.bugs)"
         coffeesLabel.text = "\(engineer.quickStats.coffees)"
         yearsLabel.text = "\(engineer.quickStats.years)"
-        quoteLabel.text = "Some quote here"
+        quoteLabel.text = "\"\(engineer.quote)\""
     }
-    
+   
     private func applyStyling() {
         nameLabel.textColor = .white
         nameLabel.font = UIFont.systemFont(ofSize: 22, weight: UIFont.Weight.semibold)
-        quoteLabel.font = UIFont.systemFont(ofSize: 22, weight: UIFont.Weight.semibold)
+        quoteLabel.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.semibold)
         roleLabel.font = UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.regular)
         roleLabel.textColor = .white
         quoteLabel.textColor = .white
