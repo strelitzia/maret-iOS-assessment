@@ -1,12 +1,12 @@
 import UIKit
 
-class QuestionsViewController: UIViewController, UIScrollViewDelegate {
+class AboutViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var containerStack: UIStackView!
     var engineer: Engineer?
     
-    static func loadController(with engineer: Engineer) -> QuestionsViewController {
-        let viewController = QuestionsViewController.init(nibName: String.init(describing: self), bundle: Bundle(for: self))
+    static func loadController(with engineer: Engineer) -> AboutViewController {
+        let viewController = AboutViewController.init(nibName: String.init(describing: self), bundle: Bundle(for: self))
         viewController.loadViewIfNeeded()
         viewController.setUp(engineer: engineer)
         return viewController
