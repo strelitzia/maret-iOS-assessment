@@ -19,9 +19,9 @@ For the next **72 hours** you will have free reign to finish off what Steve star
 - If the task has related designs you will find them in a filegroup in the project within the ***Aditional Info*** group.
 
 ### Main tasks
-- [ ] There are a total of **3 known** bugs, ranging from simple to complex. Fix the bugs.
-- [ ] Create and display a reusable component, which could be used for the profile view.
-- [ ] Finish implementing the mechanism to order the list of engineers and add tests.
+- [x] There are a total of **3 known** bugs, ranging from simple to complex. Fix the bugs.
+- [x] Create and display a reusable component, which could be used for the profile view.
+- [x] Finish implementing the mechanism to order the list of engineers and add tests.
 
 > You can complete these tasks in any order you like, but starting with one or two bugs might be a good way to get into the codebase.
 
@@ -42,8 +42,8 @@ For designs and screenshots check out the ***Profile View*** group in the projec
 - [x] Choose which version of the profile view design you would like to attempt.
 - [x] Create a generic, reusable version of your chosen design.
 - [x] Display your view at the top of the About screen.
-- [ ] Tapping on the image in your view should allow a user to select a new image to display from their gallery.
-- [ ] If a user updates their profile image, their image on the list of Engineers screen should also update.
+- [x] Tapping on the image in your view should allow a user to select a new image to display from their gallery.
+- [x] If a user updates their profile image, their image on the list of Engineers screen should also update.
 
 ## Ordering the list of Engineers
 There are no designs for this task.
