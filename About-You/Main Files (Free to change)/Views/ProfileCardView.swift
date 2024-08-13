@@ -13,23 +13,38 @@ class ProfileCardView: UIView {
     
     @IBOutlet weak var profileView: UIImageView!
     
+    var onProfileImageTapped: (()-> Void)?
+    
     override func awakeFromNib() {
         applyStyling()
     }
     
-    func setUp(engineer: Engineer) {
+    func setUp(engineer: Engineer, onProfileImageTapped: @escaping ()-> Void) {
+        self.onProfileImageTapped = onProfileImageTapped
         nameLabel.text = engineer.name
         roleLabel.text = engineer.role
         bugsLabel.text = "\(engineer.quickStats.bugs)"
         coffeesLabel.text = "\(engineer.quickStats.coffees)"
         yearsLabel.text = "\(engineer.quickStats.years)"
         quoteLabel.text = "\"\(engineer.quote)\""
-        if let imageName = engineer.imageName, 
-            let image = UIImage(named: imageName) {
-            profileImageView.image = image
-        }
+        set(profileImage: engineer.profileImage)
+        setUpProfileImageViewTap()
     }
-   
+    
+    func set(profileImage: UIImage?) {
+        profileImageView.image = profileImage ?? UIImage(systemName: "person.fill")
+    }
+    
+    private func setUpProfileImageViewTap() {
+        profileImageView.isUserInteractionEnabled = true
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(profileImageTapped))
+        profileImageView.addGestureRecognizer(gesture)
+    }
+    
+    @objc func profileImageTapped() {
+        onProfileImageTapped?()
+    }
+    
     private func applyStyling() {
         nameLabel.textColor = .white
         nameLabel.font = UIFont.systemFont(ofSize: 22, weight: UIFont.Weight.semibold)

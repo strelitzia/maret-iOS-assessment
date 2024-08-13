@@ -43,6 +43,7 @@
 		5DD01B5E27049AFA0032C29A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD01B5D27049AFA0032C29A /* UIView+Extension.swift */; };
 		7B3449CC2C6AAF3B000C71A0 /* ProfileCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B3449CB2C6AAF3B000C71A0 /* ProfileCardView.xib */; };
 		7B3449CE2C6AB073000C71A0 /* ProfileCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3449CD2C6AB073000C71A0 /* ProfileCardView.swift */; };
+		7B62C2422C6BC4B40062E96C /* EngineersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62C2412C6BC4B40062E96C /* EngineersManager.swift */; };
 		7BE939282C6A903D008FB125 /* OrderByDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE939272C6A903D008FB125 /* OrderByDelegate.swift */; };
 		7BE9392B2C6A9331008FB125 /* Engineer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE9392A2C6A9331008FB125 /* Engineer+Extension.swift */; };
 /* End PBXBuildFile section */
@@ -107,6 +108,7 @@
 		5DD01B5D27049AFA0032C29A /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		7B3449CB2C6AAF3B000C71A0 /* ProfileCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCardView.xib; sourceTree = "<group>"; };
 		7B3449CD2C6AB073000C71A0 /* ProfileCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCardView.swift; sourceTree = "<group>"; };
+		7B62C2412C6BC4B40062E96C /* EngineersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineersManager.swift; sourceTree = "<group>"; };
 		7BE939272C6A903D008FB125 /* OrderByDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderByDelegate.swift; sourceTree = "<group>"; };
 		7BE9392A2C6A9331008FB125 /* Engineer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Engineer+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -314,9 +316,11 @@
 		5D93CE39270B097800D5059C /* Main Files (Free to change) */ = {
 			isa = PBXGroup;
 			children = (
-				5D93CE3A270B09CD00D5059C /* Resources */,
-				5D8DA23726E0142400418960 /* Models */,
 				5D8DA23926E016A400418960 /* Controllers */,
+				7BE939292C6A931B008FB125 /* Extensions */,
+				7B62C2432C6BC4F70062E96C /* Managers */,
+				5D8DA23726E0142400418960 /* Models */,
+				5D93CE3A270B09CD00D5059C /* Resources */,
 				5DD01B5027046BA00032C29A /* Views */,
 			);
 			path = "Main Files (Free to change)";
@@ -325,7 +329,6 @@
 		5D93CE3A270B09CD00D5059C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				7BE939292C6A931B008FB125 /* Extensions */,
 				5DD01B622704BBF30032C29A /* Xibs */,
 			);
 			path = Resources;
@@ -352,6 +355,14 @@
 				5DD01B5527046CD00032C29A /* SelectableAnswerView.xib */,
 			);
 			path = Xibs;
+			sourceTree = "<group>";
+		};
+		7B62C2432C6BC4F70062E96C /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				7B62C2412C6BC4B40062E96C /* EngineersManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		7BE939292C6A931B008FB125 /* Extensions */ = {
@@ -508,6 +519,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DD01B5E27049AFA0032C29A /* UIView+Extension.swift in Sources */,
+				7B62C2422C6BC4B40062E96C /* EngineersManager.swift in Sources */,
 				5D8DA22B26E0104C00418960 /* RootViewController.swift in Sources */,
 				5D93CE2E2707306600D5059C /* OrderByTableViewController.swift in Sources */,
 				5D90F2E426DB774400EFA4A8 /* About_You.xcdatamodeld in Sources */,

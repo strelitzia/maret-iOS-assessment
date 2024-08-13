@@ -12,8 +12,6 @@ class GlucodianTableViewCell: UITableViewCell {
     func setUp(with engineer: Engineer) {
         nameLabel.text = engineer.name
         roleLabel.text = engineer.role
-        if let imageName = engineer.imageName, let image =  UIImage(named: imageName) {
-            profileImage.image = image
-        }
+        profileImage.image = engineer.profileImage ?? UIImage(systemName: "person.fill")
     }
 }

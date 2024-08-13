@@ -1,8 +1,8 @@
 import UIKit
 
 class EngineersTableViewController: UITableViewController, UIPopoverPresentationControllerDelegate {
-    var engineers: [Engineer] = Engineer.testingData()
 
+    var engineersManager: EngineersManager = .shared
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Engineers at Glucode"
@@ -12,27 +12,29 @@ class EngineersTableViewController: UITableViewController, UIPopoverPresentation
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tableView.reloadData()
         setupNavigationController()
     }
 
     private func setupNavigationController() {
         navigationController?.navigationBar.backgroundColor = UIColor.white
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
-
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Order by",
-                                                            style: .plain,
-                                                            target: self,
-                                                            action: #selector(orderByTapped))
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: "Order by",
+            style: .plain,
+            target: self,
+            action: #selector(orderByTapped)
+        )
         navigationItem.rightBarButtonItem?.tintColor = .black
     }
-
+    
     @objc func orderByTapped() {
         guard let from = navigationItem.rightBarButtonItem else { return }
         let controller = OrderByTableViewController(style: .plain)
         controller.delegate = self
-        let size = CGSize(width: 200,
-                          height: 150)
-
+        let size = CGSize(width: 200, height: 150)
+        
         present(popover: controller,
                 from: from,
                 size: size,
@@ -44,7 +46,10 @@ class EngineersTableViewController: UITableViewController, UIPopoverPresentation
     }
     
     private func registerCells() {
-        tableView.register(UINib(nibName: String(describing: GlucodianTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: GlucodianTableViewCell.self))
+        tableView.register(
+            UINib(nibName: String(describing: GlucodianTableViewCell.self),bundle: nil),
+            forCellReuseIdentifier: String(describing: GlucodianTableViewCell.self)
+        )
     }
 
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -61,27 +66,30 @@ class EngineersTableViewController: UITableViewController, UIPopoverPresentation
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return engineers.count
+        engineersManager.engineers.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: GlucodianTableViewCell.self)) as? GlucodianTableViewCell else {
             return UITableViewCell()
         }
-        cell.setUp(with: engineers[indexPath.row])
+        cell.setUp(with: engineersManager.engineers[indexPath.row])
         cell.accessoryType = .disclosureIndicator
         return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let controller = AboutViewController.loadController(with: engineers[indexPath.row])
+        let controller = AboutViewController.loadController(
+            with: engineersManager.engineers[indexPath.row],
+            engineersManager: engineersManager
+        )
         navigationController?.pushViewController(controller, animated: true)
     }
 }
 
 extension EngineersTableViewController: OrderByDelegate {
     func didSelectOrder(_ option: OrderOption) {
-        engineers = engineers.orderBy(by: option)
+        engineersManager.orderEngineers(by: option)
         self.tableView.reloadData()
     }
 }

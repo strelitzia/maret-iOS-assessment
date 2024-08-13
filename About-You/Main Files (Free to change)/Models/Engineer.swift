@@ -1,9 +1,10 @@
 import UIKit
 
 struct Engineer {
+    var employeeID: String
     var name: String
     var role: String
-    var imageName: String?
+    var profileImage: UIImage?
     var quickStats: QuickStats
     var questions: [Question]
     var quote: String
@@ -18,78 +19,91 @@ struct QuickStats {
 extension Engineer {
     static func testingData() -> [Engineer] {
         return [
-            Engineer(name: "Reenen",
-                     role: "Dev manager",
-                     imageName: "Reenen", 
-                     quickStats: QuickStats(years: 6, coffees: 5400, bugs: 1800),
-                     questions: [
-                        MainQuestions.questionOne(answer: Answer(text: "6am", index: 0)),
-                        MainQuestions.questionTwo(answer: Answer(text: "10 to 15 years old", index: 1)),
-                        MainQuestions.questionThree(answer: Answer(text: "Python", index: 0)),
-                        MainQuestions.questionFour(answer: Answer(text: "Every few months", index: 0)),
-                        MainQuestions.questionFive(answer: Answer(text: "Watch or read a tutorial", index: 3))
-                     ],
-                     quote: "I took the road less traveled."),
-
-            Engineer(name: "Wilmar",
-                     role: "Head of Engineering",
-                     quickStats: QuickStats(years: 15, coffees: 4000, bugs: 4000),
-                     questions: [
-                        MainQuestions.questionOne(answer: Answer(text: "midnight", index: 3)),
-                        MainQuestions.questionTwo(answer: Answer(text: "10 to 15 years old", index: 1)),
-                        MainQuestions.questionThree(answer: Answer(text: "Python", index: 0)),
-                        MainQuestions.questionFour(answer: Answer(text: "Every few months", index: 0)),
-                        MainQuestions.questionFive(answer: Answer(text: "Call a coworker or friend", index: 2))
-                     ],
-                     quote: "I took another road."),
-
-            Engineer(name: "Eben",
-                     role: "Head of Testing",
-                     quickStats: QuickStats(years: 14, coffees: 1000, bugs: 100),
-                     questions: [
-                        MainQuestions.questionOne(answer: Answer(text: "midnight", index: 3)),
-                        MainQuestions.questionTwo(answer: Answer(text: "10 to 15 years old", index: 0)),
-                        MainQuestions.questionThree(answer: Answer(text: "Kotlin", index: 1)),
-                        MainQuestions.questionFour(answer: Answer(text: "Every few months", index: 0)),
-                        MainQuestions.questionFive(answer: Answer(text: "Watch or read a tutorial", index: 3))
-                     ],
-                     quote: "I did not see that road."),
-
-            Engineer(name: "Stefan",
-                     role: "Senior dev",
-                     quickStats: QuickStats(years: 7, coffees: 9000, bugs: 700),
-                     questions: [
-                        MainQuestions.questionOne(answer: Answer(text: "6am", index: 0)),
-                        MainQuestions.questionTwo(answer: Answer(text: "21 to 25 years old", index: 3)),
-                        MainQuestions.questionThree(answer: Answer(text: "Ruby", index: 3)),
-                        MainQuestions.questionFour(answer: Answer(text: "Once a year", index: 1)),
-                        MainQuestions.questionFive(answer: Answer(text: "Visit Stack Overflow", index: 0))
-                     ],
-                     quote: "I took the highway."),
-
-            Engineer(name: "Brandon",
-                     role: "Senior dev",
-                     quickStats: QuickStats(years: 9, coffees: 99999, bugs: 99999),
-                     questions: [
-                        MainQuestions.questionOne(answer: Answer(text: "6am", index: 0)),
-                        MainQuestions.questionTwo(answer: Answer(text: "10 to 15 years old", index: 1)),
-                        MainQuestions.questionThree(answer: Answer(text: "C++", index: 5)),
-                        MainQuestions.questionFour(answer: Answer(text: "Every few months", index: 0)),
-                        MainQuestions.questionFive(answer: Answer(text: "Visit Stack Overflow", index: 0))
-                     ],
-                     quote: "I could not find the road."),
-
-            Engineer(name: "Henri",
-                     role: "Senior dev",
-                     quickStats: QuickStats(years: 10, coffees: 1800, bugs: 1000),
-                     questions: [
-                        MainQuestions.questionOne(answer: Answer(text: "6am", index: 0)),
-                        MainQuestions.questionTwo(answer: Answer(text: "10 to 15 years old", index: 0)),
-                        MainQuestions.questionThree(answer: Answer(text: "Rust", index: 6)),
-                        MainQuestions.questionFour(answer: Answer(text: "Every few months", index: 0)),
-                        MainQuestions.questionFive(answer: Answer(text: "Go down a google rabbit hole", index: 4))
-                     ],
-                     quote: "I did not see a road, so I bundu-bashed.")
+            Engineer(
+                employeeID: "2",
+                name: "Reenen",
+                role: "Dev manager",
+                profileImage: UIImage(named: "Reenen"),
+                quickStats: QuickStats(years: 6, coffees: 5400, bugs: 1800),
+                questions: [
+                    MainQuestions.questionOne(answer: Answer(text: "6am", index: 0)),
+                    MainQuestions.questionTwo(answer: Answer(text: "10 to 15 years old", index: 1)),
+                    MainQuestions.questionThree(answer: Answer(text: "Python", index: 0)),
+                    MainQuestions.questionFour(answer: Answer(text: "Every few months", index: 0)),
+                    MainQuestions.questionFive(answer: Answer(text: "Watch or read a tutorial", index: 3))
+                ],
+                quote: "I took the road less traveled."
+            ),
+            Engineer(
+                employeeID: "1",
+                name: "Wilmar",
+                role: "Head of Engineering",
+                quickStats: QuickStats(years: 15, coffees: 4000, bugs: 4000),
+                questions: [
+                    MainQuestions.questionOne(answer: Answer(text: "midnight", index: 3)),
+                    MainQuestions.questionTwo(answer: Answer(text: "10 to 15 years old", index: 1)),
+                    MainQuestions.questionThree(answer: Answer(text: "Python", index: 0)),
+                    MainQuestions.questionFour(answer: Answer(text: "Every few months", index: 0)),
+                    MainQuestions.questionFive(answer: Answer(text: "Call a coworker or friend", index: 2))
+                ],
+                quote: "I took another road."
+            ),
+            Engineer(
+                employeeID: "3",
+                name: "Eben",
+                role: "Head of Testing",
+                quickStats: QuickStats(years: 14, coffees: 1000, bugs: 100),
+                questions: [
+                    MainQuestions.questionOne(answer: Answer(text: "midnight", index: 3)),
+                    MainQuestions.questionTwo(answer: Answer(text: "10 to 15 years old", index: 0)),
+                    MainQuestions.questionThree(answer: Answer(text: "Kotlin", index: 1)),
+                    MainQuestions.questionFour(answer: Answer(text: "Every few months", index: 0)),
+                    MainQuestions.questionFive(answer: Answer(text: "Watch or read a tutorial", index: 3))
+                ],
+                quote: "I did not see that road."
+            ),
+            Engineer(
+                employeeID: "4",
+                name: "Stefan",
+                role: "Senior dev",
+                quickStats: QuickStats(years: 7, coffees: 9000, bugs: 700),
+                questions: [
+                    MainQuestions.questionOne(answer: Answer(text: "6am", index: 0)),
+                    MainQuestions.questionTwo(answer: Answer(text: "21 to 25 years old", index: 3)),
+                    MainQuestions.questionThree(answer: Answer(text: "Ruby", index: 3)),
+                    MainQuestions.questionFour(answer: Answer(text: "Once a year", index: 1)),
+                    MainQuestions.questionFive(answer: Answer(text: "Visit Stack Overflow", index: 0))
+                ],
+                quote: "I took the highway."
+            ),
+            Engineer(
+                employeeID: "5",
+                name: "Brandon",
+                role: "Senior dev",
+                quickStats: QuickStats(years: 9, coffees: 99999, bugs: 99999),
+                questions: [
+                    MainQuestions.questionOne(answer: Answer(text: "6am", index: 0)),
+                    MainQuestions.questionTwo(answer: Answer(text: "10 to 15 years old", index: 1)),
+                    MainQuestions.questionThree(answer: Answer(text: "C++", index: 5)),
+                    MainQuestions.questionFour(answer: Answer(text: "Every few months", index: 0)),
+                    MainQuestions.questionFive(answer: Answer(text: "Visit Stack Overflow", index: 0))
+                ],
+                quote: "I could not find the road."
+            ),
+            Engineer(
+                employeeID: "6",
+                name: "Henri",
+                role: "Senior dev",
+                quickStats: QuickStats(years: 10, coffees: 1800, bugs: 1000),
+                questions: [
+                    MainQuestions.questionOne(answer: Answer(text: "6am", index: 0)),
+                    MainQuestions.questionTwo(answer: Answer(text: "10 to 15 years old", index: 0)),
+                    MainQuestions.questionThree(answer: Answer(text: "Rust", index: 6)),
+                    MainQuestions.questionFour(answer: Answer(text: "Every few months", index: 0)),
+                    MainQuestions.questionFive(answer: Answer(text: "Go down a google rabbit hole", index: 4))
+                ],
+                quote: "I did not see a road, so I bundu-bashed."
+            )
         ]
     }
 }

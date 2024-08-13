@@ -142,7 +142,6 @@
                 <outlet property="nameLabel" destination="1eP-nZ-8Lg" id="D6E-BX-asa"/>
                 <outlet property="numbersView" destination="tas-Da-doe" id="daF-Ed-fiD"/>
                 <outlet property="profileImageView" destination="5MW-kW-9YQ" id="IRR-Qm-npP"/>
-                <outlet property="profileView" destination="5MW-kW-9YQ" id="LsT-i2-NU0"/>
                 <outlet property="quoteLabel" destination="qea-Mv-Mah" id="R7h-pD-qc8"/>
                 <outlet property="roleLabel" destination="Zwg-17-JeS" id="ybr-Tz-XBs"/>
                 <outlet property="yearsLabel" destination="Cem-2E-QMY" id="Qm6-R4-1Ta"/>
