@@ -24,6 +24,10 @@ class ProfileCardView: UIView {
         coffeesLabel.text = "\(engineer.quickStats.coffees)"
         yearsLabel.text = "\(engineer.quickStats.years)"
         quoteLabel.text = "\"\(engineer.quote)\""
+        if let imageName = engineer.imageName, 
+            let image = UIImage(named: imageName) {
+            profileImageView.image = image
+        }
     }
    
     private func applyStyling() {
