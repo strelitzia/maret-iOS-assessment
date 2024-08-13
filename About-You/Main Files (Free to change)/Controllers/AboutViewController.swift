@@ -48,11 +48,18 @@ class AboutViewController: UIViewController, UIScrollViewDelegate {
         containerStack.addArrangedSubview(profileView)
     }
     
-    private func addQuestion(with data: Question) {
+    private func addQuestion(with question: Question) {
         guard let cardView = QuestionCardView.loadView() else { return }
-        cardView.setUp(with: data.questionText,
-                       options: data.answerOptions,
-                       selectedIndex: data.answer?.index)
+        cardView.setUp(
+            with: question.questionText,
+            options: question.answerOptions,
+            selectedIndex: question.answer?.index
+        ) { [weak self] answer in
+            guard let self, let engineersManager = self.engineersManager, let engineer = self.engineer else {
+                return
+            }
+            engineersManager.update(engineer: engineer, question: question, answer: answer)
+        }
         containerStack.addArrangedSubview(cardView)
     }
 }

@@ -4,7 +4,7 @@ struct Question: Codable {
     let questionText: String
     let answerOptions: [String]
     let questionType: QuestionType
-    let answer: Answer?
+    var answer: Answer?
 
     enum CodingKeys: String, CodingKey {
         case questionText = "question_text"

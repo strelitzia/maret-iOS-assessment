@@ -1,16 +1,12 @@
 import UIKit
 
-protocol SelectionViewDelegate {
-    func didSelect(selectionview: SelectableAnswerView)
-}
-
 class SelectableAnswerView: UIView {
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak var highlightView: UIView!
 
     @IBOutlet weak var tapgesture: UITapGestureRecognizer!
 
-    private var delegate: SelectionViewDelegate?
+    private var didSelectCallback: ((SelectableAnswerView) -> Void)?
 
     static func loadView() -> Self? {
         let bundle = Bundle(for: self)
@@ -25,9 +21,9 @@ class SelectableAnswerView: UIView {
         applyStyling()
     }
 
-    func setUp(with title: String, delegate: SelectionViewDelegate) {
+    func setUp(with title: String, didSelectCallback: @escaping (SelectableAnswerView) -> Void) {
         titleLabel.text = title
-        self.delegate = delegate
+        self.didSelectCallback = didSelectCallback
     }
 
     func deselect() {
@@ -61,6 +57,6 @@ class SelectableAnswerView: UIView {
 
     @IBAction func didTapView(_ sender: UITapGestureRecognizer) {
         applySelectionStyling()
-        delegate?.didSelect(selectionview: self)
+        didSelectCallback?(self)
     }
 }

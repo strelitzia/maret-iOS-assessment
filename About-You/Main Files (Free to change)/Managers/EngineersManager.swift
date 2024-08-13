@@ -14,7 +14,15 @@ class EngineersManager {
         }
         engineers[index].profileImage = image
     }
-
+    
+    func update(engineer: Engineer, question: Question, answer: Answer) {
+        guard let engineerIndex = engineers.firstIndex(where: {$0.employeeID == engineer.employeeID}),
+              let questionIndex = engineers[engineerIndex].questions.firstIndex(where: {$0.questionText == question.questionText}) else {
+            return
+        }
+        engineers[engineerIndex].questions[questionIndex].answer = answer
+    }
+    
     func orderEngineers(by option: OrderOption) {
         engineers = engineers.orderBy(by: option)
     }
