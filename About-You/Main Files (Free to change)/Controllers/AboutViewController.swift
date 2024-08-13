@@ -81,7 +81,7 @@ extension AboutViewController: UIImagePickerControllerDelegate & UINavigationCon
                 profileView.set(profileImage: profileImage)
             }
             if let engineer, let engineersManager {
-                engineersManager.update(engineer: engineer, profilePicture: profileImage)
+                engineersManager.update(engineer: engineer, profileImage: profileImage)
             }
         }
         dismiss(animated: true, completion: nil)

@@ -1,14 +1,14 @@
 import UIKit
-class EngineersManager {
+final class EngineersManager {
     static var shared: EngineersManager = EngineersManager()
     
     var engineers: [Engineer]
     
-    private init(engineers: [Engineer] = Engineer.testingData()) {
+    init(engineers: [Engineer] = Engineer.testingData()) {
         self.engineers = engineers
     }
     
-    func update(engineer: Engineer, profilePicture image: UIImage) {
+    func update(engineer: Engineer, profileImage image: UIImage) {
         guard let index = engineers.firstIndex(where: {$0.employeeID == engineer.employeeID}) else {
             return
         }
