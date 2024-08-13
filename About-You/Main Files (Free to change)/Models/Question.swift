@@ -3,7 +3,7 @@ import Foundation
 struct Question: Codable {
     let questionText: String
     let answerOptions: [String]
-    let questionType: String // SLIDER, SELECTION
+    let questionType: QuestionType
     let answer: Answer?
 
     enum CodingKeys: String, CodingKey {
@@ -11,6 +11,11 @@ struct Question: Codable {
         case answerOptions = "answer_options"
         case questionType = "question_type"
         case answer
+    }
+    
+    enum QuestionType: String, Codable {
+        case slider = "SLIDER"
+        case selection = "SELECTION"
     }
 }
 
@@ -23,7 +28,7 @@ class MainQuestions {
     static func questionOne(answer: Answer) -> Question {
         return Question(questionText: "When do you have the most energy?",
                         answerOptions: ["6am", "12pm", "6pm", "Midnight"],
-                        questionType: "SELECTION",
+                        questionType: .selection,
                         answer: answer)
     }
 
@@ -34,7 +39,7 @@ class MainQuestions {
                                         "16 to 20 years old",
                                         "21 to 25 years old",
                                         "26 years old or older"],
-                        questionType: "SELECTION",
+                        questionType: .selection,
                         answer: answer)
     }
 
@@ -48,7 +53,7 @@ class MainQuestions {
                                         "C++",
                                         "Rust",
                                         "None"],
-                        questionType: "SELECTION",
+                        questionType: .selection,
                         answer: answer)
     }
 
@@ -57,7 +62,7 @@ class MainQuestions {
                         answerOptions: ["Every few months",
                                         "Once a year",
                                         "Once every few years"],
-                        questionType: "SELECTION",
+                        questionType: .selection,
                         answer: answer)
     }
 
@@ -69,7 +74,7 @@ class MainQuestions {
                                         "Watch or read a tutorial",
                                         "Go down a google rabbit hole",
                                         "Panic"],
-                        questionType: "SELECTION",
+                        questionType: .selection,
                         answer: answer)
     }
 }
